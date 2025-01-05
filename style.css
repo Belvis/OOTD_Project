@@ -1,0 +1,571 @@
+body {
+    background-color: #FDF1F6;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #FFCCE5; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Abril Fatface", serif;
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+
+}
+header.hidden {
+    transform: translateY(-100%);
+}
+
+#logo {
+    width: 10%;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #9C2A68; 
+    font-size: 16px;
+    font-weight: 400;
+    font-style: bold;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent; 
+    transition: border-color 0.3s, border-radius 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FF5C8D;
+    border-color: #F96D00; 
+    border-radius: 5px;
+}
+main {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF5C8D;
+    margin-bottom: 30px;
+}
+footer {
+    background-color: #F1E5F9;
+    color: #9C2A68;
+    padding: 10px 30px;
+    opacity: 0; /* Masqué par défaut */
+    visibility: hidden; /* Rendu invisible mais conserve l'espace */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: "Abril Fatface", serif;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Animation fluide */
+    line-height: 1.3;
+}
+
+footer .row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer.visible {
+    opacity: 1; 
+    visibility: visible;
+}
+
+footer a {
+    color: #9C2A68;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FF5C8D;
+}
+
+footer .row p {
+    margin-right: 10px;
+}
+
+footer .help{
+    text-align: right;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 2px solid #FF5C8D;  
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.form-group input {
+    width: 80%;
+    padding: 12px;
+    padding-right: 40px;
+    border: 2px solid #FFCCE5;
+    border-radius: 8px;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+/* Center buttons inside the form */
+.btn {
+    padding: 12px 30px;
+    background-color: #FF5C8D;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #FF3C6B;
+}
+
+.notification {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: #FF5C8D;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.form-container-main{
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+.sidebar {
+  width: 20%; /* Section Profil occupe 20% de la largeur */
+  height: 225vh; /* La section s'étend sur toute la hauteur */
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+    border-radius: 8px;
+      display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Pour pousser les boutons en bas */
+  align-items: center; /* Centrer le contenu horizontalement *//* Pour pousser les boutons en bas */
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+}
+
+.sidebar span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-container {
+  position: relative; /* Permet de positionner l'icône par rapport à l'image */
+  display: inline-block;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;  
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 5px solid #FF5C8D; /* Bordure épaisse */
+}
+
+figure .edit-icon {
+  position: absolute;
+  bottom: 35px;
+  right: 20px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 16px;
+  color: #FF5C8D;
+  cursor: pointer;
+  border: 2px solid #FF5C8D; /* Bordure autour de l'icône pour plus de visibilité */
+  transform: translate(50%, 50%); /* Décale l'icône pour qu'elle soit superposée sur la bordure */
+}
+
+/* Hover sur l'icône */
+.edit-icon:hover {
+  background-color: #FF5C8D;
+  color: white;
+}
+
+/* Conteneur de l'élément pseudo et icône */
+.editable-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Style du pseudo avec ligne sous le texte */
+.editable-field span {
+  border-bottom: 1px solid black;  
+  padding-right: 70px; 
+  display: inline-block;
+  text-align: left; 
+ }
+
+/* Style de l'icône de stylo */
+.editable-field .edit-icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #FF5C8D; 
+  position: relative;
+  top: -2px; 
+  left: 70px;
+}
+.editable-field .edit-icon:hover {
+  color: #FF3C6B;
+  background-color: #f5f5f5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 36px;
+
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333333;
+    transition: 0.4s;
+    border-radius: 50px; ;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1)
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+    }
+
+input:checked + .slider:before {
+    transform: translateX(34.4px);
+    }
+
+.section-container {
+    margin-top: auto; /* Pousse la section tout en bas */
+}
+
+.sidebar-second {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+
+}
+
+.info-section {
+    width: 100%; /* Prend toute la largeur de la section principale */
+    margin-bottom: 20px; /* Espacement entre les sections */
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column; /* Toujours une disposition verticale */
+    justify-content: flex-start; /* Alignement des éléments vers le haut */
+    align-items: flex-start; /* Aligne le contenu à gauche horizontalement */
+    text-align: justify; /* Justifie le texte */
+}
+
+
+.favorites-section {
+    width: 100%; /* Prend toute la largeur de la section principale */
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    align-items: flex-start;
+}
+
+
+.form-groupe .edit-icone {
+    position: absolute; /* Position absolue par rapport au parent */
+    top: 50%; /* Centre verticalement */
+    right: 10px; /* Positionne l'icône à droite */
+    transform: translateY(-50%); /* Ajuste le centrage vertical */
+    cursor: pointer;
+    font-size: 18px;
+    color: #FF5C8D;
+    transition: color 0.3s ease;
+}
+
+.form-groupe .edit-icone:hover {
+    color: #FF3C6B; /* Change la couleur au survol */
+}
+
+.form-groupe {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.form-groupe input {
+    width: 90%;
+    padding: 12px;
+    padding-right: 40px;
+    border: 2px solid #FFCCE5;
+    border-radius: 8px;
+    background-color: #F9F9F9;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px; /* Largeur maximale */
+        margin: 2rem auto; /* Centre la zone */
+        overflow: hidden; /* Cache le contenu qui dépasse */
+    }
+
+.carousel {
+        display: flex;
+        gap: 25px;
+        overflow-x: scroll; /* Permet de défiler horizontalement */
+        scroll-behavior: smooth; /* Défilement fluide */
+        scrollbar-width: none; /* Masque la barre sur Firefox */
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none; /* Masque la barre sur Chrome, Edge et Safari */
+    }
+
+    .carousel-item {
+        flex: 0 0 auto; /* Empêche les vignettes de s'étirer */
+        width: 200px; /* Largeur des vignettes */
+        height: 300px; /* Hauteur des vignettes */
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .carousel-item:hover {
+        transform: scale(1.1); /* Zoom sur la vignette */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: none; /* Caché par défaut */
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .arrow i {
+        font-size: 20px; /* Taille des icônes */
+    }
+
+    .arrow:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .left-arrow {
+        left: 10px;
+    }
+
+    .right-arrow {
+        right: 10px;
+    }
+
+    .carousel-container:hover .arrow {
+        display: flex; /* Affiche les flèches au survol */
+    }
+
+#carousel-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+        overflow-x: scroll; /* Permet de défiler horizontalement */
+        scroll-behavior: smooth; /* Défilement fluide */
+        scrollbar-width: none; 
+        }
+
+        #carousel-item {
+        flex: 0 0 auto; /* Empêche les vignettes de s'étirer */
+        width: 300px; /* Largeur des vignettes */
+        height: 400px; /* Hauteur des vignettes */
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        }
+
+        #carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #carousel-item:hover {
+        transform: scale(1.1); /* Zoom sur la vignette */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+    }
+
+    #carousel-container:hover .arrow {
+        display: flex; /* Affiche les flèches au survol */
+    }
+
+    .left-arrows {
+        left: 150px;
+        top: 400px;
+    }
+
+    .right-arrows {
+        right: 150px;
+        top: 400px;
+    }
+    #form-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 2px solid #FF5C8D;  
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+        .thumbs i {
+            cursor: pointer;
+            font-size: 40px;
+            border: 2px solid #FFCCE5;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .thumbs .thumb-up {
+            left: 70px;
+            bottom: 20px;
+            font-size: 30px;
+            position: absolute;
+        }
+
+        .thumbs .thumb-down {
+            right: 50px;
+            bottom: 20px;
+            font-size: 30px;
+            position: absolute;
+        }
+
+        .thumbs i:hover {
+            background-color: #FF5C8D;
+        }
